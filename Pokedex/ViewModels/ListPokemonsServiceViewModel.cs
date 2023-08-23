@@ -1,25 +1,25 @@
 ﻿using Pokedex.Models;
 using Pokedex.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Pokedex.ViewModels
 {
     public class ListPokemonsServiceViewModel : BaseViewModel
     {
-        private readonly PokedexService pokedexService;
+        private readonly PokedexService pokedexService;        
 
-        public Task<List<Pokemon>> Pokemons { get; set; }
+        public ObservableCollection<Results> Pokemons { get; set; }
 
         public ListPokemonsServiceViewModel()
         {
             pokedexService = new PokedexService();
-            Pokemons = LoadPokemons();
+            Pokemons = new ObservableCollection<Results>();
+            LoadPokemons();
         }
 
-        private async Task<List<Pokemon>> LoadPokemons()
+        private void LoadPokemons()
         {
-            return await pokedexService.GetAll();
+            Pokemons = pokedexService.GetAll();            
         }
     }
 }

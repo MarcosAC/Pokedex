@@ -1,6 +1,12 @@
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Pokedex.iOS.exe
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Pokedex.iOS.pdb
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\System.Buffers.dll
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\System.Memory.dll
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\System.Text.Encodings.Web.dll
+C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\System.Text.Json.dll
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Xamarin.Essentials.dll
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Xamarin.Essentials.pdb
 C:\Projetos\Pokedex\Pokedex.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll

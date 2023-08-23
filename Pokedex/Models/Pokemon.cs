@@ -16,7 +16,7 @@ namespace Pokedex.Models
         public object Previous { get; set; }
 
         [JsonProperty("results")]
-        public List<Result> Results { get; set; }
+        public List<Results> Results { get; set; }
 
         //[JsonProperty("id")]
         //public long Id { get; set; }
@@ -35,10 +35,10 @@ namespace Pokedex.Models
 
         //public byte[] Image { get; set; }
 
-        //public string Description { get; set; }
+        //public string Description { get; set; }       
     }
 
-    public class Result
+    public class Results
     {
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -46,4 +46,20 @@ namespace Pokedex.Models
         [JsonProperty("url")]
         public Uri Url { get; set; }
     }
+
+    //public class Results
+    //{
+    //    [JsonProperty("name")]
+    //    public string name { get; set; }
+
+    //    [JsonProperty("url")]
+    //    public Uri Url { get; set; }
+    //    public string imagem
+    //    {
+    //        get
+    //        {
+    //            return "https://img.pokemondb.net/artwork/" + name + ".jpg";
+    //        }
+    //    }
+    //}
 }
