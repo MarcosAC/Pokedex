@@ -13,12 +13,28 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="0,20,0,0">
-                                <Label
-                            Text="{Binding Name}"
-                        />
-                                <!--<TextCell Text="{Binding Count}" />-->
-                            </StackLayout>
+                            <Frame Padding="10"
+                                      CornerRadius="10"
+                                      Margin="10"
+                                      HasShadow="False">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Image}"
+                                               HeightRequest="60"
+                                               WidthRequest="60"/>
+                                    <Label Grid.Column="2"
+                                               Text="{Binding Name}"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="#000000"/>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                         
                     </DataTemplate>

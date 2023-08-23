@@ -45,6 +45,14 @@ namespace Pokedex.Models
 
         [JsonProperty("url")]
         public Uri Url { get; set; }
+
+        public string Image
+        {
+            get
+            {
+                return "https://img.pokemondb.net/artwork/" + Name + ".jpg";
+            }
+        }
     }
 
     //public class Results
