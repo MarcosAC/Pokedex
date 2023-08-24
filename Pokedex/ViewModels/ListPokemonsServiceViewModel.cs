@@ -34,7 +34,7 @@ namespace Pokedex.ViewModels
             if (resultsSelected == null)
                 return;
 
-            await App.Current.MainPage.Navigation.PushAsync(new DetailPokemonView());
+            await App.Current.MainPage.Navigation.PushAsync(new DetailPokemonView(resultsSelected));
         }
 
     }

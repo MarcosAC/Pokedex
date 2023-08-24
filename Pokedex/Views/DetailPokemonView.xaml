@@ -4,7 +4,10 @@
              x:Class="Pokedex.Views.DetailPokemonView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Image Source="{Binding Image}"
+                   HeightRequest="120"
+                   WidthRequest="120" />
+            <Label Text="{Binding Name}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

@@ -52,6 +52,8 @@ namespace Pokedex.Models
             {
                 return "https://img.pokemondb.net/artwork/" + Name + ".jpg";
             }
+
+            set { }
         }
     }
 

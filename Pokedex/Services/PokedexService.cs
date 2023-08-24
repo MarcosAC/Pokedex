@@ -21,9 +21,9 @@ namespace Pokedex.Services
             {
                 string url = Constantes.BaseUrl;
 
-                var response = _HttpClient.GetStringAsync(url).Result;
+                string response = _HttpClient.GetStringAsync(url).Result;
 
-                var content = JsonConvert.DeserializeObject<Pokemon>(response);
+                Pokemon content = JsonConvert.DeserializeObject<Pokemon>(response);
 
                 return new ObservableCollection<Results>(content.Results);
 
@@ -44,6 +44,17 @@ namespace Pokedex.Services
             {
                 throw ex;
             }
+        }
+
+        public Pokemon Get(string name)
+        {
+            string url = Constantes.BaseUrl + name;
+
+            string response = _HttpClient.GetStringAsync(url).Result;
+
+            Pokemon content = JsonConvert.DeserializeObject<Pokemon>(response);
+
+            return content;
         }
     }
 }
