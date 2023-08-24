@@ -18,12 +18,12 @@ namespace Pokedex
             set { BindingContext = value; }
         }
 
-        //private void OnItemSelect(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    if (e.SelectedItem != null)
-        //        ViewModel.SelecionarServicoCommand.Execute(e.SelectedItem);
+        private void OnItemSelect(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+                ViewModel.SelectPokemonCommand.Execute(e.SelectedItem);
 
-        //    ListaServicos.SelectedItem = null;
-        //}
+            PokemonList.SelectedItem = null;
+        }
     }
 }

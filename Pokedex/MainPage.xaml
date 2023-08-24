@@ -5,11 +5,11 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView
-                  ItemsSource="{Binding Pokemons}"                                                              
-                  HasUnevenRows="True">
-                <!--ItemSelected="OnItemSelect"
-                SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"-->
+            <ListView x:Name="PokemonList"
+                      ItemsSource="{Binding Pokemons}"
+                      ItemSelected="OnItemSelect"
+                      SelectedItem="{Binding ServicoSelecionado, Mode=TwoWay}"
+                      HasUnevenRows="True">                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -41,50 +41,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-
-        <!--<StackLayout>
-            <ListView
-                ItemsSource="{Binding Pokemons}"
-                HasUnevenRows="True"
-                >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame Padding="10"
-                                      CornerRadius="10"
-                                      Margin="10"
-                                      HasShadow="False">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="20"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding imagem}"
-                                               HeightRequest="60"
-                                               WidthRequest="60"/>
-                                    <Label Grid.Column="2"
-                                               Text="{Binding name}"
-                                               VerticalTextAlignment="Center"
-                                               TextColor="#000000"/>
-                                </Grid>
-                            </Frame>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ActivityIndicator IsRunning="{Binding IsRunLoading}"
-                Color="Red"
-                BackgroundColor="Transparent"/>
-            <Button Text="Carregar mais pokemons"
-                TextColor="#C32D2F"
-                BackgroundColor="#FFFFFF"
-                Command="{Binding LoadingMore}"
-                CornerRadius="10"/>
-        </StackLayout>-->
-
     </ContentPage.Content>
 </ContentPage>
