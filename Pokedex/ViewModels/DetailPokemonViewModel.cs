@@ -7,6 +7,10 @@ namespace Pokedex.ViewModels
     {
         public Pokemon _selectedPokemon;
 
+        public List<Types> ListTypes => Types;
+
+        public List<Abilities> ListAbilities => Abilities;
+
         public DetailPokemonViewModel(Pokemon selectedPokemon)
         {
             _selectedPokemon = selectedPokemon;
@@ -35,8 +39,8 @@ namespace Pokedex.ViewModels
         public int Weight
         {
             get { return _selectedPokemon.Weight; }
-            set
-            {
+            set 
+            { 
                 _selectedPokemon.Weight = value;
                 OnPropertyChanged();
             }
@@ -57,6 +61,16 @@ namespace Pokedex.ViewModels
             set
             {
                 _selectedPokemon.Types = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public List<Abilities> Abilities
+        {
+            get { return _selectedPokemon.Abilities; }
+            set
+            {
+                _selectedPokemon.Abilities = value;
                 OnPropertyChanged();
             }
         }

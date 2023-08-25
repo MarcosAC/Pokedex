@@ -20,6 +20,8 @@ namespace Pokedex.Models
 
         public List<Types> Types { get; set; }
 
+        public List<Abilities> Abilities { get; set; }
+
         public List<Results> Results { get; set; }
 
         public string Image
@@ -54,6 +56,21 @@ namespace Pokedex.Models
     }
 
     public class Type
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }
+
+    public class Abilities
+    {
+        [JsonProperty("slot")]
+        public int Slot { get; set; }
+
+        [JsonProperty("ability")]
+        public Ability Abilitie { get; set; }
+    }
+
+    public class Ability
     {
         [JsonProperty("name")]
         public string Name { get; set; }

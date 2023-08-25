@@ -1,64 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Pokedex.Views.DetailPokemonView">
+             x:Class="Pokedex.Views.DetailPokemonView"
+             Title="Pokemon">
     <ContentPage.Content>
-        <!--<StackLayout>
+        <StackLayout Padding="0,10,0,10">
             <Image Source="{Binding Image}"
                    HeightRequest="120"
                    WidthRequest="120" />
-            <Label Text="{Binding Name}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>-->
 
-        <Frame BorderColor="#931F21"
-                    BackgroundColor="#C32D2F"
-                    HasShadow="False"
-                    Margin="10"
-                    CornerRadius="10">
-            <Grid RowSpacing="10" ColumnSpacing="10" HorizontalOptions="CenterAndExpand">
+            <Grid Padding="10,0,10,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-               
-                <Label Grid.Row="0"
-                       Text="{Binding Name}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       TextColor="#FFFFFF"/>
-                
-                <Image Grid.Row="1"
-                       Grid.ColumnSpan="2"
-                       HeightRequest="20">
-                    <Image.Source>
-                        <UriImageSource Uri="{Binding Image}"
-                                    CacheValidity="14" 
-			                        CachingEnabled="true"/>
-                    </Image.Source>
-                </Image>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Name:" />
+                <Label Grid.Column="1"
+                   Text="{Binding Name}" />
+
+                <Label Grid.Row="1"
+                   Text="Experience: " />
+                <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Text="{Binding BaseExperience}" />
 
                 <Label Grid.Row="2"
-                       Text="{Binding BaseExperience}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       TextColor="#FFFFFF"/>
+                   Text="Height: " />
+                <Label Grid.Row="2"
+                   Grid.Column="1"
+                   Text="{Binding Height}" />
 
                 <Label Grid.Row="3"
-                       Text="{Binding Height}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       TextColor="#FFFFFF"/>
+                   Text="Weight: " />
+                <Label Grid.Row="3"
+                   Grid.Column="1"
+                   Text="{Binding Weight}" />
 
-                <Label Grid.Row="4"
-                       Text="{Binding Weight}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       TextColor="#FFFFFF"/>
+                <Label Grid.Row="4" 
+                       Text="Type:" />
+
+                <CollectionView Grid.Row="4"
+                                Grid.Column="1"
+                                ItemsSource="{Binding ListTypes}" >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Type.Name}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Grid.Row="5" 
+                       Text="Ability:" />
+
+                <CollectionView Grid.Row="5"
+                                Grid.Column="1"
+                                ItemsSource="{Binding ListAbilities}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                                <Label Text="{Binding Abilitie.Name}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
-        </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

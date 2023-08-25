@@ -27,7 +27,7 @@ namespace Pokedex.ViewModels
 
         private Pokemon Get(string name)
         {
-            var pokemon = pokedexService.Get(name);
+            Pokemon pokemon = pokedexService.Get(name);
             return pokemon;
         }
 

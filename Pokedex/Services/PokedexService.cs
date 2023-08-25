@@ -26,19 +26,6 @@ namespace Pokedex.Services
                 Pokemon content = JsonConvert.DeserializeObject<Pokemon>(response);
 
                 return new ObservableCollection<Results>(content.Results);
-
-                //var response = await _HttpClient.GetAsync(url);
-
-                //if (!response.IsSuccessStatusCode)
-                //    await App.Current.MainPage.DisplayAlert("Eita Nóis...", "Alguma coisa de errado não deu certo!!!", "Ok");
-
-                //var data = await response.Content.ReadAsStringAsync();
-
-                //var pokemons = new List<Pokemon>();
-
-                //pokemons.Add(content);
-
-                //return content;
             }
             catch (Exception ex)
             {
