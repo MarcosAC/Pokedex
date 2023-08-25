@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Pokedex.Views;
+using Xamarin.Forms;
 
 namespace Pokedex
 {
@@ -8,7 +9,7 @@ namespace Pokedex
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ListPokemonView());
         }
 
         protected override void OnStart()

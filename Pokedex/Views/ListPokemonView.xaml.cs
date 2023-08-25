@@ -1,18 +1,20 @@
 ﻿using Pokedex.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace Pokedex
+namespace Pokedex.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ListPokemonView : ContentPage
     {
-        public MainPage()
+        public ListPokemonView()
         {
             InitializeComponent();
 
             ViewModel = new ListPokemonsViewModel();
         }
 
-        public ListPokemonsViewModel ViewModel 
+        public ListPokemonsViewModel ViewModel
         {
             get { return BindingContext as ListPokemonsViewModel; }
             set { BindingContext = value; }
