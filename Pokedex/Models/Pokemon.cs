@@ -6,36 +6,27 @@ namespace Pokedex.Models
 {
     public class Pokemon
     {
-        [JsonProperty("count")]
-        public long Count { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-        [JsonProperty("next")]
-        public Uri Next { get; set; }
+        [JsonProperty("height")]
+        public int Height { get; set; }
 
-        [JsonProperty("previous")]
-        public object Previous { get; set; }
+        [JsonProperty("weight")]
+        public int Weight { get; set; }
 
-        [JsonProperty("results")]
+        [JsonProperty("base_experience")]
+        public int BaseExperience { get; set; }
+
+        public List<Types> Types { get; set; }
+
         public List<Results> Results { get; set; }
 
-        //[JsonProperty("id")]
-        //public long Id { get; set; }
-
-        //[JsonProperty("name")]
-        //public string Name { get; set; }
-
-        //[JsonProperty("url")]
-        //public string Url { get; set; }
-
-        //[JsonProperty("height")]
-        //public long Height { get; set; }
-
-        //[JsonProperty("sprites")]
-        //public Sprites Sprites { get; set; }
-
-        //public byte[] Image { get; set; }
-
-        //public string Description { get; set; }       
+        public string Image
+        {
+            get { return "https://img.pokemondb.net/artwork/" + Name + ".jpg"; }
+            set { }
+        }
     }
 
     public class Results
@@ -48,28 +39,23 @@ namespace Pokedex.Models
 
         public string Image
         {
-            get
-            {
-                return "https://img.pokemondb.net/artwork/" + Name + ".jpg";
-            }
-
+            get{ return "https://img.pokemondb.net/artwork/" + Name + ".jpg"; }
             set { }
         }
     }
 
-    //public class Results
-    //{
-    //    [JsonProperty("name")]
-    //    public string name { get; set; }
+    public class Types
+    {
+        [JsonProperty("slot")]
+        public int Slot { get; set; }
 
-    //    [JsonProperty("url")]
-    //    public Uri Url { get; set; }
-    //    public string imagem
-    //    {
-    //        get
-    //        {
-    //            return "https://img.pokemondb.net/artwork/" + name + ".jpg";
-    //        }
-    //    }
-    //}
+        [JsonProperty("type")]
+        public Type Type { get; set; }
+    }
+
+    public class Type
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }
 }

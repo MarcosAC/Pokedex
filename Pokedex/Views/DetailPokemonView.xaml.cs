@@ -8,7 +8,7 @@ namespace Pokedex.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPokemonView : ContentPage
     {
-        public DetailPokemonView(Results selectedPokemon)
+        public DetailPokemonView(Pokemon selectedPokemon)
         {
             InitializeComponent();
 

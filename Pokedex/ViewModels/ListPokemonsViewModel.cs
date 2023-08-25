@@ -7,13 +7,13 @@ using Xamarin.Forms;
 
 namespace Pokedex.ViewModels
 {
-    public class ListPokemonsServiceViewModel : BaseViewModel
+    public class ListPokemonsViewModel : BaseViewModel
     {
-        private readonly PokedexService pokedexService;        
+        private readonly PokedexService pokedexService;
 
         public ObservableCollection<Results> Pokemons { get; set; }
 
-        public ListPokemonsServiceViewModel()
+        public ListPokemonsViewModel()
         {
             pokedexService = new PokedexService();
             Pokemons = new ObservableCollection<Results>();
@@ -25,6 +25,12 @@ namespace Pokedex.ViewModels
             Pokemons = pokedexService.GetAll();
         }
 
+        private Pokemon Get(string name)
+        {
+            var pokemon = pokedexService.Get(name);
+            return pokemon;
+        }
+
         private Command _selectPokemonCommand;
         public Command SelectPokemonCommand => _selectPokemonCommand ??
             new Command<Results>(async results => await ExecuteSelectePokemonCommand(results));
@@ -32,10 +38,11 @@ namespace Pokedex.ViewModels
         private async Task ExecuteSelectePokemonCommand(Results resultsSelected)
         {
             if (resultsSelected == null)
+            {
                 return;
+            }
 
-            await App.Current.MainPage.Navigation.PushAsync(new DetailPokemonView(resultsSelected));
+            await App.Current.MainPage.Navigation.PushAsync(new DetailPokemonView(Get(resultsSelected.Name)));
         }
-
     }
 }

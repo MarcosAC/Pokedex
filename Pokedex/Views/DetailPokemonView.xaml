@@ -3,13 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pokedex.Views.DetailPokemonView">
     <ContentPage.Content>
-        <StackLayout>
+        <!--<StackLayout>
             <Image Source="{Binding Image}"
                    HeightRequest="120"
                    WidthRequest="120" />
             <Label Text="{Binding Name}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        </StackLayout>-->
+
+        <Frame BorderColor="#931F21"
+                    BackgroundColor="#C32D2F"
+                    HasShadow="False"
+                    Margin="10"
+                    CornerRadius="10">
+            <Grid RowSpacing="10" ColumnSpacing="10" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+               
+                <Label Grid.Row="0"
+                       Text="{Binding Name}"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#FFFFFF"/>
+                
+                <Image Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       HeightRequest="20">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding Image}"
+                                    CacheValidity="14" 
+			                        CachingEnabled="true"/>
+                    </Image.Source>
+                </Image>
+
+                <Label Grid.Row="2"
+                       Text="{Binding BaseExperience}"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#FFFFFF"/>
+
+                <Label Grid.Row="3"
+                       Text="{Binding Height}"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#FFFFFF"/>
+
+                <Label Grid.Row="4"
+                       Text="{Binding Weight}"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="#FFFFFF"/>
+            </Grid>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

@@ -9,12 +9,12 @@ namespace Pokedex
         {
             InitializeComponent();
 
-            ViewModel = new ListPokemonsServiceViewModel();
+            ViewModel = new ListPokemonsViewModel();
         }
 
-        public ListPokemonsServiceViewModel ViewModel 
+        public ListPokemonsViewModel ViewModel 
         {
-            get { return BindingContext as ListPokemonsServiceViewModel; }
+            get { return BindingContext as ListPokemonsViewModel; }
             set { BindingContext = value; }
         }
 
