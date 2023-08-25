@@ -24,30 +24,39 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Label Text="Name:" />
+                <Label Text="Name:"
+                       TextColor="#000000" />
                 <Label Grid.Column="1"
-                   Text="{Binding Name}" />
+                       Text="{Binding Name}"
+                       TextColor="#000000" />
 
                 <Label Grid.Row="1"
-                   Text="Experience: " />
+                       Text="Experience:"
+                       TextColor="#000000"/>
                 <Label Grid.Row="1"
-                   Grid.Column="1"
-                   Text="{Binding BaseExperience}" />
+                       Grid.Column="1"
+                       Text="{Binding BaseExperience}"
+                       TextColor="#000000" />
 
                 <Label Grid.Row="2"
-                   Text="Height: " />
+                       Text="Height:"
+                       TextColor="#000000" />
                 <Label Grid.Row="2"
-                   Grid.Column="1"
-                   Text="{Binding Height}" />
+                       Grid.Column="1"
+                       Text="{Binding Height}"
+                       TextColor="#000000" />
 
                 <Label Grid.Row="3"
-                   Text="Weight: " />
+                       Text="Weight:"
+                       TextColor="#000000" />
                 <Label Grid.Row="3"
-                   Grid.Column="1"
-                   Text="{Binding Weight}" />
+                       Grid.Column="1"
+                       Text="{Binding Weight}" 
+                       TextColor="#000000" />
 
                 <Label Grid.Row="4" 
-                       Text="Type:" />
+                       Text="Type:"
+                       TextColor="#000000" />
 
                 <CollectionView Grid.Row="4"
                                 Grid.Column="1"
@@ -57,13 +66,15 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Label Text="{Binding Type.Name}" />
+                            <Label Text="{Binding Type.Name}"
+                                   TextColor="#000000" />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
                 <Label Grid.Row="5" 
-                       Text="Ability:" />
+                       Text="Ability:"
+                       TextColor="#000000"/>
 
                 <CollectionView Grid.Row="5"
                                 Grid.Column="1"
@@ -73,7 +84,8 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                                <Label Text="{Binding Abilitie.Name}" />
+                                <Label Text="{Binding Abilitie.Name}"
+                                       TextColor="#000000" />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
