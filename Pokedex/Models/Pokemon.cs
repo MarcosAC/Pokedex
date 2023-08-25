@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace Pokedex.Models
@@ -29,50 +28,5 @@ namespace Pokedex.Models
             get { return "https://img.pokemondb.net/artwork/" + Name + ".jpg"; }
             set { }
         }
-    }
-
-    public class Results
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("url")]
-        public Uri Url { get; set; }
-
-        public string Image
-        {
-            get{ return "https://img.pokemondb.net/artwork/" + Name + ".jpg"; }
-            set { }
-        }
-    }
-
-    public class Types
-    {
-        [JsonProperty("slot")]
-        public int Slot { get; set; }
-
-        [JsonProperty("type")]
-        public Type Type { get; set; }
-    }
-
-    public class Type
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
-    }
-
-    public class Abilities
-    {
-        [JsonProperty("slot")]
-        public int Slot { get; set; }
-
-        [JsonProperty("ability")]
-        public Ability Abilitie { get; set; }
-    }
-
-    public class Ability
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
     }
 }
