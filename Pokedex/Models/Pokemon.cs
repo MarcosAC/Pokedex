@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Pokedex.Models
 {
@@ -17,11 +17,11 @@ namespace Pokedex.Models
         [JsonProperty("base_experience")]
         public int BaseExperience { get; set; }
 
-        public List<Types> Types { get; set; }
+        public ObservableCollection<Types> Types { get; set; }
 
-        public List<Abilities> Abilities { get; set; }
+        public ObservableCollection<Abilities> Abilities { get; set; }
 
-        public List<Results> Results { get; set; }
+        public ObservableCollection<Results> Results { get; set; }
 
         public string Image
         {

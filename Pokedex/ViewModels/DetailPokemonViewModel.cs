@@ -1,5 +1,5 @@
 ﻿using Pokedex.Models;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Pokedex.ViewModels
 {
@@ -7,9 +7,9 @@ namespace Pokedex.ViewModels
     {
         public Pokemon _selectedPokemon;
 
-        public List<Types> ListTypes => Types;
+        public ObservableCollection<Types> ListTypes => Types;
 
-        public List<Abilities> ListAbilities => Abilities;
+        public ObservableCollection<Abilities> ListAbilities => Abilities;
 
         public DetailPokemonViewModel(Pokemon selectedPokemon)
         {
@@ -56,7 +56,7 @@ namespace Pokedex.ViewModels
             }
         }
 
-        public List<Types> Types{
+        public ObservableCollection<Types> Types{
             get { return _selectedPokemon.Types; }
             set
             {
@@ -65,7 +65,7 @@ namespace Pokedex.ViewModels
             }
         }
 
-        public List<Abilities> Abilities
+        public ObservableCollection<Abilities> Abilities
         {
             get { return _selectedPokemon.Abilities; }
             set
