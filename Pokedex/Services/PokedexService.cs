@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Pokedex.Models;
-using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 
@@ -17,20 +16,13 @@ namespace Pokedex.Services
 
         public ObservableCollection<Results> GetAll()
         {
-            try
-            {
-                string url = Constantes.BaseUrl;
+            string url = Constantes.BaseUrl;
 
-                string response = _HttpClient.GetStringAsync(url).Result;
+            string response = _HttpClient.GetStringAsync(url).Result;
 
-                Pokemon content = JsonConvert.DeserializeObject<Pokemon>(response);
+            Pokemon content = JsonConvert.DeserializeObject<Pokemon>(response);
 
-                return new ObservableCollection<Results>(content.Results);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return new ObservableCollection<Results>(content.Results);           
         }
 
         public Pokemon Get(string name)
